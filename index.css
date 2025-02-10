@@ -1,130 +1,127 @@
-*{   
-    
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;}
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-
-header{
+/* Header */
+header {
     display: flex;
-    height: 80px;
-    background-color: #ffffff;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+    background-color: #ffffff;
+    padding: 0 4%;
     border-bottom: 1px solid #b6b1b1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.myntra_home{
+/* Logo */
+.myntra_home {
     height: 50px;
-    
 }
 
-.logo_container{
-    margin-left: 4%;
-}
-
-.action_bar{
-    margin-right: 4%;
-}
-
-.nav_bar{
+/* Navigation Bar */
+.nav_bar {
     display: flex;
     min-width: 500px;
     justify-content: space-evenly;
 }
 
-.nav_bar a{
+.nav_bar a {
     font-size: 14px;
-    letter-spacing: .3px;
-    color: #282c3f;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
+    color: #282c3f;
     padding: 28px 0;
-    border-bottom: 5px solid #ffffff;
+    border-bottom: 2px solid transparent;
 }
 
-.nav_bar a:hover{
-    border-bottom: 2px solid #f54e77;}
+.nav_bar a:hover {
+    border-bottom: 2px solid #f54e77;
+}
 
-
-.nav_bar  a sup{
+.nav_bar a sup {
     color: #ff3f6c;
     font-size: 10px;
 }
 
-.search_bar{
-    height: 40px;
-    min-width: 200px;
-    width: 30%;
+/* Search Bar */
+.search_bar {
     display: flex;
     align-items: center;
+    width: 30%;
+    min-width: 200px;
+    background: #f5f5f6;
+    border-radius: 5px;
+    padding: 5px;
 }
 
-.search_icon{
-    box-sizing: content-box;
-    height: 20px;
+.search_icon {
+    font-size: 20px;
     padding: 10px;
-    background-color: #f5f5f6; /* यहाँ ; जोड़ें */
-    font-weight: 300;
-    border-radius: 5px 0 0 5px;
-}
-.search_input{
-    color: #696c79;
-    background-color: #f5f5f6; /* यहाँ ; जोड़ें */
-    flex-grow: 1;
-    height: 40px;
-    border: 0;
-    border-radius: 0  5px 5px 0;
 }
 
-.action_bar{
+.search_input {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    padding: 5px;
+    color: #696c79;
+}
+
+/* Action Bar */
+.action_bar {
     display: flex;
     min-width: 200px;
     justify-content: space-evenly;
 }
 
-.action_container{
+.action_container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* main section */
-
-.banner_container{
+/* Banner */
+.banner_container {
     margin: 40px 0;
 }
 
-.banner_image{
-    width: 100%;}
+.banner_image {
+    width: 100%;
+    height: auto;
+}
 
-.category_heading{
+/* Categories */
+.category_heading {
     text-transform: uppercase;
     color: #3e4152;
-    letter-spacing: .15em;
+    letter-spacing: 0.15em;
     font-size: 1.8em;
-    margin: 50px 0 10px 30px;
-    max-height: 5em;
     font-weight: 700;
+    margin: 50px 30px 10px;
 }
 
-.category_items{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
+.category_items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
 }
 
-.sale_item{
-    width: 250px;
-
+.sale_item {
+    width: 100%;
+    height: auto;
 }
 
+/* Footer */
 footer {
     background-color: #fafbfc;
     padding: 30px 5%;
-    font-family: Arial, sans-serif;
     color: #282c3f;
 }
 
@@ -179,4 +176,51 @@ footer {
     margin-top: 20px;
     font-size: 14px;
     color: #94969f;
+}
+
+/* 🔹 Responsive Styles */
+@media (max-width: 1024px) {
+    .nav_bar {
+        min-width: auto;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide Navbar on Small Screens */
+    .nav_bar {
+        display: none;
+    }
+
+    /* Adjust Search Bar */
+    .search_bar {
+        width: 100%;
+    }
+
+    /* Adjust Action Bar */
+    .action_bar {
+        gap: 10px;
+    }
+
+    .action_name {
+        display: none;
+    }
+
+    /* Make Footer Stack Vertically */
+    .footer_container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduce Padding for Mobile */
+    header {
+        padding: 0 2%;
+    }
+
+    .category_heading {
+        font-size: 1.5em;
+        margin: 30px 10px;
+    }
 }
